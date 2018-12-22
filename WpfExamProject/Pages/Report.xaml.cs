@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using WpfExamProject.Model;
+
+
+namespace WpfExamProject.Pages
+{
+    /// <summary>
+    /// Логика взаимодействия для Report.xaml
+    /// </summary>
+    public partial class Report : Page
+    {
+        ModelEntity db = new ModelEntity();
+        public Report(newEquipment g)
+        {
+            InitializeComponent();
+            TableTrackMeter.ItemsSource = db.TrackMeters.ToList();
+            ReportBind.DataContext = g;
+        }
+    }
+}
